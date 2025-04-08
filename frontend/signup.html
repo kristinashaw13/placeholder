@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <!--General configurations-->
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <title> CulinaryCompass </title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+    <body>
+        <!-- This re-establishes the header for the application-->
+         <header id = "main-header">
+            <!-- This re-populates the title and the website logo-->
+             <div id = "logo-title">
+                <img src = "Webpage Logo/Logo.png" alt = "CulinaryCompass Logo" id = "header-logo">
+                <h1 id = "header-title"> CulinaryCompass </h1>
+             </div>
+
+             <!-- This re-establishes the search bar-->
+              <div id = "header-content">
+                <div class = "search-bar">
+                    <input type = "text" id = "dietary-preference" placeholder = "What can we help you find?">
+                    <button id = "search-button"> Search </button>
+                </div>
+
+              <!-- This re-establishes the dropdown menu-->
+               <nav class = "dropdown">
+                    <button class = "dropbtn"> Menu </button>
+                    <div class = "dropdown-content">
+                        <a href = "account.html" id = "edit-account"> Edit Account Details </a>
+                        <a href = "nearby-restaurants.html" id = "nearby-restaurants"> Nearby Restaurants </a>
+                        <a href = "community.html" id = "community"> Community </a>
+                        <a href = "settings.html" id = "settings"> Settings </a>
+                    </div>
+               </nav>
+
+               <!-- This re-establishes the home button-->
+                <a href = "index.html" class = "home-button"> Home </a>
+            </div>
+         </header>
+
+         <!-- This establishes the ability for the user to create an account-->
+          <h1> Sign Up </h1>
+          <form id = "signup-form">
+            <label for = "username"> Username: </label>
+            <input type = "text" id = "username" name = "username" required>
+            <label for = "email"> Email: </label>
+            <input type = "email" id = "email" name = "email" required>
+            <label for = "password"> Password: </label>
+            <input type = "password" id = "password" name = "password" required>
+            <button type = "submit"> Sign Up </button>
+          </form>
+
+          <script type="module" src="signup.js" defer></script>
+    </body>
+</html>
