@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <title> CulinaryCompass </title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+    <body>
+        <!-- This section specifies the header of the page -->
+         <header id = "main-header">
+            <!-- This is the logo -->
+             <div id = "logo-title">
+                <img src = "Webpage Logo/Logo.png" alt = "Culinary Compass Logo" id = "header-logo">
+                <h1 id = "header-title"> CulinaryCompass </h1>
+             </div>
+             <!-- This is for the search bar -->
+             <div id = "header-content">
+                <div class = "search-bar">
+                    <input type = "text" id = "dietary-preference" placeholder = "What can we help you find?">
+                    <button id = "search-button"> Search </button>
+                </div>
+
+                 <!-- This is for the dropdown menu -->
+                 <nav class = "dropdown">
+                    <button class = "dropbtn"> Menu </button>
+                    <div class = "dropdown-content">
+                        <a href = "account.html" id = "edit-account"> Edit Account Details </a>
+                        <a href = "nearby-restaurants.html" id = "nearby-restaurants"> Nearby Restaurants </a>
+                        <a href = "community.html" id = "community"> Community </a>
+                        <a href = "settings.html" id = "settings"> Settings </a>
+                    </div>
+                 </nav>
+
+                 <!-- This is the home button -->
+                  <a href = "index.html" class = "home-button"> Home </a>
+              </div>
+         </header>
+
+         <div class="account.details">
+            <h2>User Profile</h2>
+            <!-- Profile Picture -->
+            <div id="profile-picture-section">
+                <img id="profile-picture" src="images/default-profile.jpg" alt="Profile Picture">
+                <div id="profile-picture-controls">
+                    <input type="file" id="profile-picture-upload" accept="image/*">
+                    <button id="upload-picture-btn">Upload Picture</button>
+                    <button id="change-picture-btn" style="display: none;">Change Picture</button>
+                    <button id="remove-picture-btn" style="display: none;">Remove Picture</button>
+                </div>
+            </div>
+            <!-- User Information -->
+            <p id="loading-message">Loading...</p>
+            <div id="user-details" style="display: none;">
+                <p><strong>Username:</strong> <span id="user-username"></span></p>
+                <p><strong>Email:</strong> <span id="user-email"></span></p>
+                <p><strong>Dietary Restrictions:</strong> <span id="user-dietary"></span></p>
+                <p><strong>Last Login:</strong> <span id="user-last-login"></span></p>
+                <p>
+                    <strong>Password:</strong> <span id="hashed-password">********</span>
+                    <a href="#" id="forgot-password-link">Forgot Password?</a>
+                </p>
+                <p><em>Password is securely hashed and cannot be viewed.</em></p>
+            </div>
+            <button id="logout-button" style="display: none;">Sign Out</button>
+    
+            <h3>Edit Dietary Restrictions</h3>
+            <form id="dietary-form">
+                <label for="dietary-restrictions">Add Dietary Restriction:</label>
+                <select id="dietary-restrictions">
+                    <option value="" selected>Select a restriction</option>
+                    <option value="Gluten Free">Gluten Free</option>
+                    <option value="Nut Allergy">Nut Allergy</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Dairy Free">Dairy Free</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Pescatarian">Pescatarian</option>
+                    <option value="Kosher">Kosher</option>
+                    <option value="Halal">Halal</option>
+                </select>
+                <button type="submit">Add Restriction</button>
+            </form>
+    
+            <div class="dietary-restrictions">
+                <strong>Current Dietary Restrictions:</strong>
+                <ul id="dietary-display-list">
+                    <li>No restrictions to display</li>
+                </ul>
+            </div>
+    
+            <h3>Update Email or Password</h3>
+            <button id="update-email-password">Update Email/Password</button>
+        </div>
+    
+        <!-- Firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+        <script src="accounts.js"></script>
+    </body>
+    </html>
