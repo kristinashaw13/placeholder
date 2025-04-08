@@ -1,0 +1,819 @@
+/* Define Color Variables */
+:root {
+	--primary-color: #A97C61;
+	--secondary-color: #B89F74;
+	--background-color: #F5E8D0;
+	--hover-color: #5A3D2B;
+	--light-color: #f9f9f9;
+	--dark-color: #333;
+}
+
+/* General Styles */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: var(--background-color);
+	color: var(--dark-color);
+	text-align: center;
+}
+
+/* Header Styles */
+#main-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #7B5C40; /* Dark brown */
+	padding: 20px 40px;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+#logo-title {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+#header-logo {
+	height: 150px; /* Adjust logo size */
+	width: auto; /* Keep aspect ratio intact */
+}
+
+#header-title {
+	font-size: 24px;
+	color: white; /* Match the dark brown theme */
+	margin: 0;
+}
+
+#header-content {
+	display: flex;
+	align-items: center;
+	gap: 5px; /* Space between header elements */
+}
+
+/* Search Bar and Button */
+.search-bar input[type="text"] {
+	padding: 8px;
+	font-size: 14px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+
+.search-bar button {
+	padding: 8px 12px;
+	font-size: 14px;
+	color: saddlebrown;
+	background-color: #A97C61;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.search-bar button:hover {
+	background-color: #5A3D2B;
+}
+
+/* Reusable Search Button Style */
+.search-button {
+	padding: 8px 12px;
+	font-size: 14px;
+	color: saddlebrown;
+	background-color: #A97C61;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.search-button:hover {
+	background-color: #5A3D2B;
+}
+
+/* Dropdown Menu */
+.dropdown .dropbtn {
+	padding: 8px 12px;
+	font-size: 14px;
+	color: saddlebrown;
+	background-color: #A97C61;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.dropdown .dropbtn:hover {
+	background-color: #5A3D2B;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: white;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	margin-top: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+	right: -10px;
+}
+
+.dropdown-content a {
+	padding: 10px 20px;
+	display: block;
+	text-decoration: none;
+	color: #333;
+}
+
+.dropdown-content a:hover {
+	background-color: #f1f1f1;
+}
+
+/* Home Button */
+.home-button, #homeButton {
+	padding: 8px 12px;
+	font-size: 14px;
+	color: saddlebrown;
+	background-color: #A97C61;
+	border: none;
+	border-radius: 4px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.home-button:hover, #homeButton:hover {
+	background-color: var(--hover-color);
+}
+
+/* Welcome Message Styles */
+#welcome-message {
+	text-align: center;
+	margin-top: 100px;
+}
+
+/* Main Section Styles */
+#map-container {
+	margin: 20px;
+	height: 500px;
+}
+
+#map {
+	height: 100%;
+	width: 100%;
+}
+
+/* Dietary Preferences Tab and Box Styles */
+.tab, .box {
+	margin: 5px 0;
+	padding: 10px;
+	border: 1px solid #ccc;
+	background-color: var(--light-color);
+}
+
+.tab {
+	display: inline-block;
+	cursor: pointer;
+	background-color: #f0f0f0;
+}
+
+.tab.active {
+	background-color: #ddd;
+	font-weight: bold;
+}
+
+.content, .selected-options, .box-content {
+	margin-top: 10px;
+}
+
+.content {
+	display: none;
+}
+
+.content.active {
+	display: block;
+}
+
+.selected-options {
+	margin: 20px auto;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 8px;
+	max-width: 800px;
+}
+
+label {
+	display: block;
+	margin: 10px 0;
+}
+
+/* Settings Tabs and Content */
+#settingsTabs {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 20px;
+	gap: 10px;
+}
+
+.tab {
+	padding: 10px 20px;
+	background-color: #A97C61;
+	border-radius: 5px;
+}
+
+.tab:hover {
+	background-color: #5A3D2B;
+}
+
+.tab.active {
+	background-color: var(--primary-color);
+	color: saddlebrown;
+}
+
+.content {
+	padding: 20px;
+	border: 1px solid #ccc;
+	margin-top: 10px;
+	background-color: #fff;
+	border-radius: 8px;
+}
+
+.top-left-image {
+	display: inline-block;
+	text-align: left;
+}
+
+.shifted-title {
+	margin-left: 20px;
+	vertical-align: middle;
+}
+
+/* Login Form */
+#login-form {
+    margin-top: 100px;
+    text-align: center;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    width: 250px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 5px auto;
+    display: block;
+    box-sizing: border-box;
+}
+
+#login-form label {
+    display: block;
+    margin: 5px 0;
+}
+
+#login-form button#login-button {
+    padding: 8px 16px;
+    background-color: #A97C61;
+    color: saddlebrown;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#login-form button#login-button:hover {
+    background-color: #5A3D2B;
+}
+
+/* Account Details */
+.account-details {
+    margin-top: 50px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.account-details img {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+.account-details p {
+    margin: 5px 0;
+}
+
+.dietary-restrictions {
+    margin-top: 10px;
+}
+
+.dietary-restrictions p {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    background-color: #e0f7fa;
+    border-radius: 5px;
+}
+
+#dietary-form {
+    margin: 10px 0;
+}
+
+#dietary-restrictions {
+    width: 250px;
+    padding: 5px;
+    margin: 5px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#dietary-form button {
+    width: 150px;
+    padding: 5px 10px;
+    background-color: #A97C61;
+    color: saddlebrown;
+    border: none;
+    cursor: pointer;
+    margin: 5px auto;
+    display: block;
+    border-radius: 4px;
+}
+
+#dietary-form button:hover {
+    background-color: #5A3D2B;
+}
+
+#logout-button {
+    width: 150px;
+    padding: 8px 16px;
+    background-color: #A97C61;
+    color: saddlebrown;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px auto;
+    display: block;
+}
+
+#logout-button:hover {
+    background-color: #5A3D2B;
+}
+
+.account-details button:not(#dietary-form button):not(#logout-button) {
+    width: 150px;
+    padding: 8px 16px;
+    background-color: #A97C61;
+    color: saddlebrown;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px auto;
+    display: block;
+}
+
+.account-details button:not(#dietary-form button):not(#logout-button):hover {
+    background-color: #5A3D2B;
+}
+
+/* Restaurant Details */
+#restaurant-details {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	margin: 20px auto;
+	padding: 20px;
+	max-width: 800px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* News Feed */
+.news-feed {
+	width: 80%;
+	margin: 20px auto;
+	font-family: Arial, sans-serif;
+	padding: 20px;
+}
+
+.post {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 10px 0;
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post h3 {
+	margin: 0 0 10px;
+	font-size: 18px;
+}
+
+.post p {
+	margin: 0 0 10px;
+}
+
+.post small {
+	color: #666;
+}
+
+.post-text {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.profile img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.username {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.profile .username a {
+	color: #333;
+	text-decoration: none;
+}
+
+.profile .username a:hover {
+	text-decoration: underline;
+}
+
+.actions {
+	margin: 10px 0;
+}
+
+.actions button {
+	background-color: #A97C61;
+	color: saddlebrown;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 14px;
+	transition: background-color 0.3s;
+}
+
+.actions button:hover {
+	background-color: #A97C61; /* Note: Likely a typo, consider #5A3D2B */
+}
+
+.comments {
+	margin-left: 20px;
+}
+
+.comment {
+	margin: 5px 0;
+	background-color: white;
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.comment span {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 14px;
+}
+
+.comment-buttons button {
+	background-color: #A97C61;
+	color: saddlebrown;
+	border: none;
+	padding: 3px 6px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 12px;
+	transition: background-color 0.3s;
+}
+
+.comment-buttons button:hover {
+	background-color: #A97C61; /* Note: Likely a typo, consider #5A3D2B */
+}
+
+#newComment {
+	width: 100%;
+	padding: 8px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+button.add-comment {
+	padding: 8px 16px;
+	background-color: #A97C61;
+	color: saddlebrown;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button.add-comment:hover {
+	background-color: #A97C61; /* Note: Likely a typo, consider #5A3D2B */
+}
+
+.post-timestamp {
+	font-size: 12px;
+	color: #888;
+}
+
+/* Dietary Display List */
+#dietary-display-list {
+	list-style-type: none;
+	padding: 0;
+}
+
+#dietary-display-list li {
+	margin: 5px 0;
+}
+
+.remove-restriction {
+	color: #000000;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+.remove-restriction:hover {
+	text-decoration: underline;
+}
+
+/* Community Content */
+#community-content {
+	max-width: 800px;
+	margin: 20px auto;
+	padding: 0 15px;
+}
+
+#post-form-container {
+	margin-bottom: 20px;
+}
+
+#community-post-form input,
+#community-post-form textarea {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 8px;
+	font-size: 16px;
+}
+
+#community-post-form textarea {
+	height: 100px;
+	resize: vertical;
+}
+
+#community-post-form button {
+	padding: 8px 16px;
+	background-color: #A97C61;
+	color: saddlebrown;
+	border: none;
+	cursor: pointer;
+}
+
+#community-post-form button:hover {
+	background-color: #5A3D2B;
+}
+
+#conversation-stream {
+	border-top: 1px solid #ddd;
+}
+
+/* Profile Picture Section */
+#profile-picture-section {
+	margin: 20px 0;
+}
+
+#profile-picture {
+	border-radius: 50%;
+	max-width: 150px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+#profile-picture-controls {
+	margin-top: 10px;
+}
+
+#profile-picture-upload {
+	display: block;
+	margin: 10px auto;
+}
+
+#upload-picture-btn,
+#change-picture-btn,
+#remove-picture-btn {
+	padding: 5px 10px;
+	background-color: #A97C61;
+	color: saddlebrown;
+	border: none;
+	cursor: pointer;
+	margin: 5px;
+}
+
+#remove-picture-btn {
+	background-color: #A97C61;
+}
+
+#upload-picture-btn:hover,
+#change-picture-btn:hover {
+	background-color: #5A3D2B;
+}
+
+#remove-picture-btn:hover {
+	background-color: #5A3D2B;
+}
+
+/* Additional Settings */
+#settings-container {
+	max-width: 800px;
+	margin: 20px auto;
+	padding: 20px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+input[type="text"], input[type="password"], select, textarea {
+	padding: 5px;
+}
+
+button {
+	padding: 10px;
+	cursor: pointer;
+}
+
+.danger {
+	background-color: #A97C61;
+	color: saddlebrown;
+}
+
+.danger:hover {
+	background-color: #5A3D2B;
+}
+
+.delete-post {
+	background-color: #A97C61;
+	color: saddlebrown;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.delete-post:hover {
+	background-color: #5A3D2B;
+}
+
+.comment-input {
+	width: 80%;
+	height: 50px;
+	margin-top: 10px;
+}
+
+.delete-comment {
+	margin: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.search-bar {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#map-container {
+		margin: 10px;
+		height: 300px;
+	}
+
+	.dropdown-content {
+		min-width: 140px;
+	}
+}
+
+#chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1000;
+}
+#chatbot-container {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+#chatbot-section {
+    padding: 10px;
+}
+#chatbot-messages {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+#chatbot-messages p {
+    margin: 5px 0;
+}
+#chatbot-messages .user {
+    text-align: right;
+    color: #007bff;
+}
+#chatbot-messages .ai {
+    text-align: left;
+    color: #28a745;
+}
+#chatbot-input {
+    width: 80%;
+}
+
+/* Chatbot styles */
+#chatbot-toggle {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+#chatbot-container {
+	position: fixed;
+	bottom: 60px;
+	right: 20px;
+	width: 300px;
+	height: 400px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+}
+
+#chatbot-section {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+#chatbox {
+	flex: 1;
+	padding: 10px;
+	overflow-y: auto;
+	border-bottom: 1px solid #ccc;
+}
+
+#chatbox p {
+	margin: 5px 0;
+}
+
+#message {
+	width: calc(100% - 60px);
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin: 5px;
+}
+
+#send-chatbot-message {
+	padding: 5px 10px;
+	margin: 5px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+#send-chatbot-message:hover {
+	background-color: #45A049;
+}
