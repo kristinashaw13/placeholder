@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <title> CulinaryCompass </title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+    <body>
+        <!-- This section specifies the header of the page -->
+         <header id = "main-header">
+            <!-- This is the logo -->
+             <div id = "logo-title">
+                <img src = "Webpage Logo/Logo.png" alt = "CulinaryCompass Logo" id = "header-logo">
+                <h1 id = "header-title"> CulinaryCompass </h1>
+             </div>
+             <!-- This is for the search bar -->
+             <div id = "header-content">
+              <div class = "search-bar">
+                  <input type = "text" id = "dietary-preference" placeholder = "What can we help you find?">
+                  <button id = "search-button"> Search </button>
+              </div>
+
+                 <!-- This is for the dropdwon menu -->
+                 <nav class = "dropdown">
+                    <button class = "dropbtn"> Menu </button>
+                    <div class = "dropdown-content">
+                        <a href = "account.html" id = "edit-account"> Edit Account Details </a>
+                        <a href = "nearby-restaurants.html" id = "nearby-restaurants"> Nearby Restaurants </a>
+                        <a href = "community.html" id = "community"> Community </a>
+                        <a href = "settings.html" id = "settings"> Settings </a>
+                    </div>
+                 </nav>
+
+                 <!-- This is the home button -->
+                  <a href = "index.html" class = "home-button"> Home </a>
+              </div>
+         </header>
+
+  <h1>Community</h1>
+  <div id="community-content">
+    <!-- Post Form (visible only if the user is signed in) -->
+    <div id="post-form-container" style="display: none;">
+      <form id="community-post-form">
+        <input type="text" id="post-title" placeholder="Title (e.g., Recipe Request)" required>
+        <textarea id="post-content" placeholder="Share your thoughts, recipes, or questions..." required></textarea>
+        <button type="submit">Post</button>
+      </form>
+    </div>
+    <!-- Conversation Stream -->
+    <div id="conversation-stream">
+      <p id="loading-message">Loading posts...</p>
+      <div id="posts-list"></div>
+    </div>
+  </div>
+
+  <div id="chatbot-toggle">💬 Chat</div>
+  <div id="chatbot-container" style="display: none;">
+      <div id="chatbot-section">
+        <div id="chatbox"></div>
+        <input id="message" type="text" placeholder="Ask me anything about cooking!">
+        <button onclick="sendMessage()">Send</button>
+        <script src="/src/js/main.js"></script>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="main.js"></script>
+  <script src="community.js"></script>
+</body>
+</html>
