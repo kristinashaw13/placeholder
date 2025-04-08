@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CulinaryCompass - Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div id="logo-title">
+            <img src="Webpage Logo/Logo.png" alt="Culinary Compass Logo" id="header-logo">
+            <h1 id="header-title">CulinaryCompass</h1>
+        </div>
+        <div id="header-content">
+          <!-- This specifies the search bar -->
+            <div class="search-bar">
+                <input type="text" id="dietary-preference" placeholder="What can we help you find?">
+                <button id="search-button">Search</button>
+            </div>
+          <!-- This is for the dropwdown menu -->
+            <nav class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="account.html" id="edit-account">Edit Account Details</a>
+                    <a href="nearby-restaurants.html" id="nearby-restaurants">Nearby Restaurants</a>
+                    <a href="community.html" id="community">Community</a>
+                    <a href="settings.html" id="settings">Settings</a>
+                    <a href="index.html" id="logout">Logout</a>
+                </div>
+            </nav>
+            <a href="index.html" class="home-button">Home</a>
+        </div>
+    </header>
+
+    <!-- Settings -->
+    <h2>Settings</h2>
+    <div id="loading-message">Loading...</div>
+    <div id="settings-container" style="display: none;">
+        <div id="settingsTabs">
+            <div class="tab" onclick="openTab('profileTab')">Profile</div>
+            <div class="tab" onclick="openTab('notificationsTab')">Notifications</div>
+            <div class="tab" onclick="openTab('locationTab')">Location</div>
+            <div class="tab" onclick="openTab('emailVerificationTab')">Email Verification</div>
+            <div class="tab" onclick="openTab('statusTab')">Status</div>
+            <div class="tab" onclick="openTab('dietaryPreferencesTab')">Dietary Preferences</div>
+            <div class="tab" onclick="openTab('accountManagementTab')">Account Management</div>
+
+            <!-- Tab Content -->
+            <div id="profileTab" class="content">
+                <form id="profile-form">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required>
+                    <button type="submit">Update Username</button>
+                </form>
+            </div>
+            <div id="notificationsTab" class="content">
+                <label><input type="checkbox" id="enableNotifications"> Enable Notifications</label>
+            </div>
+            <div id="locationTab" class="content">
+                <label><input type="checkbox" id="locationEnabled"> Enable Location Sharing</label>
+            </div>
+            <div id="emailVerificationTab" class="content">
+                <label><input type="checkbox" id="emailVerified" disabled> Email Verified</label>
+                <button id="send-verification-email">Send Verification Email</button>
+            </div>
+            <div id="statusTab" class="content">
+                <label><input type="checkbox" id="status"> Active Status</label>
+            </div>
+            <div id="dietaryPreferencesTab" class="content">
+                <div id="dietaryPreferencesList"></div>
+                <select id="dietary-preference-select">
+                    <option value="">Add a dietary preference</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Gluten-Free">Gluten-Free</option>
+                    <option value="Dairy-Free">Dairy-Free</option>
+                </select>
+                <button id="add-dietary-preference">Add</button>
+            </div>
+            <div id="accountManagementTab" class="content">
+                <form id="password-form">
+                    <label for="new-password">New Password:</label>
+                    <input type="password" id="new-password" required>
+                    <button type="submit">Change Password</button>
+                </form>
+                <button id="delete-account" class="danger">Delete Account</button>
+            </div>
+        </div>
+        <button id="save-settings">Save Settings</button>
+    </div>
+
+    <!-- User Settings Display -->
+    <div class="selected-options" id="userSettingsInfo">
+        <strong>Current Settings:</strong>
+        <div id="settingsInfoDisplay">Loading user settings...</div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>
