@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+    <body>
+
+        <!-- This is the header section for the page -->
+         <header id = "main-header">
+            <!-- This is for the webpage logo and title -->
+             <div id = "logo-title">
+                <img src = "Webpage Logo/Logo.png" alt = "Culinary Compass Logo" id = "header-logo">
+                <h1 id = "header-title"> CulinaryCompass </h1>
+             </div>
+
+             <!-- This is for the search bar -->
+              <div id = "header-content">
+                <div class = "search-bar">
+                    <input type = "text" id = "dietary-preference" placeholder = "What can we help you find?">
+                    <button id = "search-button"> Search </button>
+                </div>
+
+                <!-- This is for the dropdwon menu -->
+                 <nav class = "dropdown">
+                    <button class = "dropbtn"> Menu </button>
+                    <div class = "dropdown-content">
+                        <a href = "account.html" id = "edit-account"> Edit Account Details </a>
+                        <a href = "nearby-restaurants.html" id = "nearby-restaurants"> Nearby Restaurants </a>
+                        <a href = "community.html" id = "community"> Community </a>
+                        <a href = "settings.html" id = "settings"> Settings </a>
+                    </div>
+                 </nav>
+
+                 <!-- This is for the home button -->
+                  <a href = "index.html" class = "home-button"> Home </a>
+              </div>
+         </header>
+         <section id = "map-container">
+            <div id = "map"> </div>
+         </section>
+         <section>
+            
+            <!-- Section for detailed restaurant info -->
+             <div id = "restaurant-details" style = "margin-top: 20px; padding: 20px; background-color: #f9f9f9; border: 1px solid #ccc;">
+                <h2> Restaurant Details </h2>
+                <p id = "restaurant-name"> <strong> Name: </strong></p>
+                <p id = "restaurant-address"> <strong> Address: </strong></p>
+                <p id = "restaurant-cuisine"> <strong> Cuisine: </strong></p>
+                <p id = "restaurant-rating"> <strong> Rating: </strong></p>
+                <p id = "restaurant-phone"> <strong> Phone: </strong></p>
+             </div>
+         </section>
+         <script src = "app.js"> </script>
+         <script async defer src = "https://maps.googleapis.com/maps/api/YOUR_API_KEY> </script>
+    </body>
+</html>
