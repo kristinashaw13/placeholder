@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- general configurations-->
+<html lang = "en">
+    <head>
+        <meta charset "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <title> CulinaryCompass </title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+<body>
+    <!-- This specifies the main header section for the whole application-->
+    <header id = "main-header">
+
+        <!-- This specifies the logo and the appliction title-->
+        <div id = "logo-title">
+            <img src = "Webpage Logo/Logo.png" alt = "CulinaryCompass Logo" id = header-logo>
+            <h1 id = "header-title"> CulinaryCompass</h1>
+        </div>
+        
+        <!-- This creates a search bar-->
+        <div id = "header-content">
+            <div class = "search-bar">
+                <input type = "text" id = "dietary-preference" placeholder = "What can we help you find?">
+                <button id = "search-button"> Search </button>
+            </div>
+
+            <!-- This is for the dropdwon menu -->
+            <nav class = "dropdown">
+                <button class = "dropbtn"> Menu </button>
+                <div class = "dropdown-content">
+                    <a href = "account.html" id = "edit-account"> Edit Account Details </a>
+                    <a href = "nearby-restaurants.html" id = "nearby-restaurants"> Nearby Restaurants </a>
+                    <a href = "community.html" id = "community"> Community </a>
+                    <a href = "settings.html" id = "settings"> Settings </a>
+                </div>
+             </nav>
+
+            <!-- This will create a home button for the user to return to the home screen-->
+             <a href = "index.html" class = "home-button"> Home </a>
+        </div>
+    </header>
+
+    <!-- This initializes a welcome message that users will see displayed on the home screen-->
+     <section id = "welcome-message">
+        <h2> Welcome to CulinaryCompass!</h2>
+        <p> Your personal companion to help you find options tailored to your specific needs. </p>
+        <p> Start your culinary journey by searching for restaurants or exploring our community page! </p>
+     </section>
+
+     <!-- This displays a sign in/ sign up section for an easy log in experience-->
+      <section id = "sign-in-sign-up">
+        <h2> Please Sign In or Create an Account Below </h2>
+        
+        <!-- This handles the logging in aspect if the user already has an account-->
+        <form id = "login-form">
+            <label for = "username"> Email: </label>
+            <input type = "text" id = "username" placeholder = "Enter your username" required>
+            <label for = "password"> Password: </label>
+            <input type = "password" id = "password" placeholder = "Enter your password" required>
+            <button type = "submit" id = "login-button"> Log In </button>
+        </form>
+
+        <!-- Option to create an account if the user does not have one-->
+         <p> Don't have an account? Create one here: <a href = "signup.html" id = "sign-up-link"> Sign Up Here</a></p>
+         <p><a href = "#" id = "forgot-password-link"> Forgot Password? </a></p>
+      </section>
+
+      <!-- Option for a user to sign out of their account-->
+       <section id = "sign-out-section" style = "display: none;">
+            <button id = "logout-button"> Sign Out </button>
+       </section>
+
+       <script>
+        document.getElementById("sign-up-link").addEventListener("click", function (e) {
+            e.preventDefault();
+            window.location.href = "signup.html";
+        });
+       </script>
+       <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+       <script src = "app.js"></script>
+</body>
+</html>
